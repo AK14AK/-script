@@ -129,7 +129,7 @@
     }
     
     function handleKeyPress(event) {
-        if (event.key === 'F9') {
+        if (event.ctrlKey&& event.key.toLowercase() === 'k') {
             event.preventDefault();
             event.stopPropagation();
             toggleControlPanel();
@@ -176,7 +176,7 @@
             <button class="seb-btn-secondary" id="seb-close">Close</button>
             <hr style="margin: 15px 0;">
             <p style="margin: 0; font-size: 12px; color: #666;">
-                F9: Toggle Panel | Alt+Q: Toggle Buttons | Alt+Z: Hide Buttons
+                Ctrl+K: Toggle Panel | Alt+Q: Toggle Buttons | Alt+Z: Hide Buttons
             </p>
         `;
         
@@ -469,3 +469,4 @@
                (answerLower.match(/^[a-d]/) && textLower.includes(answerLower.charAt(0)));
     }
 })();
+
